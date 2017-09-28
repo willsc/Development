@@ -1,0 +1,18 @@
+---
+
+- hosts: localhost
+
+
+
+  tasks:
+   - name: install nginx
+     apt-get: name=nginx state=installed
+
+   - name: install pip
+     apt-get: name=python-pip state=installed
+
+   - name: install flask
+     pip: name=flask
+
+   - name: fetch application
+     git: repo=https://gist.github.com/c454e2e839fcb20605a3.git dest=flask-demo
